@@ -1,0 +1,225 @@
+body{
+    margin: 0;
+
+}
+.login{
+    background-color: #e0e0e0;
+    width: 300px;
+    height: 400px;
+    padding: 30px;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    text-align: center;
+}
+
+.login img{
+    width: 50px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.login h1{
+    font-size: 20px;
+}
+
+img,h1{
+    text-align: center;
+}
+
+.cpf,.senha,.nome{
+    margin-bottom: 15px;
+    text-align: left;
+}
+/*Posicionamento da mensagem de erro*/
+small{
+    visibility: hidden;
+    position: absolute;
+    margin-top: 38px;
+    font-size: 14px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer label{
+    font-size: 13px;
+}
+
+.footer .btn{
+    margin-left: 1rem;
+    height: 40px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+#cadastro {
+    margin-right: 35px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #dc3545;    
+    
+}
+#cadastro:hover{
+    color: rgb(0, 33, 91);
+}
+.login a{
+    margin-top: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+
+}
+
+.login a:hover{
+    color: black;
+}
+
+.areaCliente{
+    background-color:  #cecdcd;
+    width: 300px;
+    height: 400px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    display: block;
+}
+
+.areaCliente img{
+    width: 150px;
+    margin-bottom: 30px;
+}
+.areaCliente #lock{
+    width: 45px;
+    margin-bottom: 8px;
+}
+
+.identificador{
+    margin-top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tituloAreaCliente{
+    display: flex;
+    padding-top: 10px;
+}
+.areaCliente p{
+    font-size: 17px;
+    text-align: left;
+}
+.identificador{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+}
+.olho{
+    position: absolute;
+    right: 8px;
+    top: 3px;
+}
+
+.alterarSenha{
+    background-color: #e0e0e0;
+    width: 300px;
+    height: auto;
+    padding: 30px;
+    border-radius: 8px;
+    border-top-left-radius: 8px;
+    text-align: center;
+}
+
+.confCpf, .confemail, .confSenha, .confSenhaN{
+    margin-bottom: 5px;
+}
+.confCpf{
+    margin-bottom: -10px;
+}
+.confSenhaN{
+    margin-top: -10px;
+}
+
+.alterarSenha h1{
+    font-size: 20px;
+}
+
+/* Adiciona uma repetição de imagem como fundo na tela de login*/
+.fundo{
+    background-image: url(../imagens/fundo.jpg);
+}
+
+/* Estilização de sucesso e erro nos campos do formulario*/
+.input-group.success input{
+    border: 3px solid rgba(5, 240, 44, 0.295);
+}
+
+.input-group.erro input{
+    border: 3px solid #f13232ea;
+}
+.input-group.erro small{
+    color: #f13232ea;
+    visibility: visible;
+}
+.input-group.erro .olho, .input-group.success .olho{
+    top: 7px;
+}
+
+
+.confCpf .input-group.erro, .confemail .input-group.erro, .confSenha .input-group.erro, .confSenhaN .input-group.erro{
+    margin-bottom: 25px;
+}
+.confCpf .input-group.success, .confemail .input-group.success, .confSenha .input-group.success, .confSenhaN .input-group.success{
+    margin-bottom: 15px;
+}
+
+@media (max-width: 600px){
+    .areaCliente{
+        display: none;
+   }
+   .login{
+    border-radius: 8px;
+   }
+}
+#eut{
+    color: #dc3545;
+    margin-top: 50px;
+}
+.alerta {
+    display: flex; /* Ativa o layout flexível */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center;
+    margin: 5vh auto -15vh auto;
+}
+
+.imgAlerta {
+    width: 70px; /* Ajuste a largura conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-right: 10px; /* Espaço à direita da imagem */
+}
+h4{
+    margin-top: -20px;
+}
+#pc{
+    
+    color: #6f6f6f;
+    text-align: center;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 15px;
+
+}
+#pc2{
+    
+    color: #C91C2B;
+    text-align: center;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin-top: -15px;
+
+}

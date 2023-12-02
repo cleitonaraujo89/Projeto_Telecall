@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.fonteconthrax{
+    font-family: conthrax, sans-serif;  
+    color: #004A7A;
+    padding: 50px 0px 30px 0px;
+    text-align: center;
+    font-style: italic;
+    font-size: 2.5rem;
+}
+.h1produtos{
+  font-family: neuro, sans-serif;
+  color: #288a9b;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0px 5px 0px;
+}
+.h3produtos{
+    font-family: neuro, sans-serif;
+    text-align: center;
+    color: #288a9b;
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+.flexprodutos{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    max-width: auto;
+    margin: auto;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    
+}
+.itensprodutos{
+    width: 300px;
+    height: 300px;
+    box-shadow: 3px 5px 6px 0px #00000082;
+    border: 1px solid #C91C2B;
+    padding: 30px 15px;
+    border-radius: 5%;
+  
+}
+.itensprodutos a{
+    color: #C91C2B;
+    padding: 5px;
+    border: 1px solid  #C91C2B;
+    border-radius: 5px;  
+  
+}
+.itensprodutos a:hover{
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.349);  
+    /* font-weight: bold; */
+  
+        
+}
+.itensprodutos h2{
+    color: #920511;
+}
+.itensprodutos p{
+    font-size: 1.18rem;
+}
+
+@media (max-width: 800px){
+    .fonteconthrax{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 450px){
+    .fonteconthrax{
+        font-size: 1.5rem;
+       
+    }
+}

@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.ecom{
+    text-align: center;
+    padding: 0 2rem;
+}
+.ecom img {
+    max-width: 50%;
+    border-radius: 5px;
+}  
+ 
+.mapa{
+    display: flex;
+    position: relative;
+    padding: 20px 30px;       
+    justify-self: center;
+    justify-content: center;
+}
+.mapa img{
+   max-width: 100%;   
+}
+
+.infomapa{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    
+    
+}
+.depo{
+    display: block;
+     text-align: center;
+}
+
+/* .video{
+    background-color: transparent;
+    padding: 20px;
+    padding-bottom: 56%;
+    position: relative;
+}
+.video iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 80%;
+    height: 80%;
+} */
+.video{
+   padding: 50px 0px;
+
+} 
+
+.videoifr{
+    max-width: 100%;
+}

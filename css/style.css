@@ -1,0 +1,130 @@
+@charset "UTF-8";
+@import url(header.css);
+@import url(solucoes.css);
+@import url(ecom_depo_video.css);
+@import url(footer.css);
+@import url(produtos.css);
+@font-face {
+    font-family: neuro;
+    src: url(../fontes/neuropol.ttf) format('truetype') ;
+}
+@font-face {
+    font-family: conthrax;
+    src: url(../fontes/conthrax.ttf) format('truetype');
+}
+
+*{
+    margin: 0%;
+}
+
+main{
+    margin: auto;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+.h1fontg{
+    text-align: center;
+    font-family: neuro, "sans-serif";
+    font-size: 2.5rem;
+    color: #288a9b;
+    padding: 3rem 1rem 0 1rem;
+    font-weight: bold;
+   
+}
+#rapido{
+    font-style: italic;
+    color: #146a79;
+}
+
+
+/*modo escuro*/
+body {
+    background-color: #fafafa;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.2s linear;   
+}    
+body.dark, body.dark .solucoes-box{
+    background: #111 ;
+    color: #288a9b;
+
+}
+.checkbox{
+    opacity: 0;
+    position: absolute;
+}
+.label{
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    position: relative;
+    height: 20px;
+    width: 45px;
+
+    transform: scale(1.5);
+}
+.label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 17px;
+    width: 17px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+
+}
+
+.checkbox:checked + .label .ball{
+    transform: translateX(24px);
+}
+.fa-moon{
+    color:  #f3eaead7;
+}
+.fa-sun{
+    color: #f39c12;
+}
+
+@media (max-width: 800px){
+    .h1fontg{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 450px){
+    .h1fontg{
+        font-size: 1.25rem;
+        padding: 10px;
+    }
+    #carouselExampleInterval{
+        padding: 0%;
+    }
+    .solucoes img{
+       width: 45px;
+    }  
+    #cliente{
+        margin-left: 0px;
+    }   
+    .foot img{
+        max-width: 50%;   
+    }
+}
+
+@media (max-width:360px){
+    #cliente::before{  
+        display: none;    
+    } 
+}

@@ -1,0 +1,40 @@
+1 - utilizamos o php para validar e alterar a exibição do layout de algumas telas
+
+2 - tabela de perguntas e respostas independentes das informações do cadastro possibilitando alterar
+perguntas e respostas mais facilmente caso nescessário
+
+3 - toda interação com o banco de dados está em um bloco try/catch que caso tenha alguma exception irá
+direcionar o usuario para tela de erro, destruir a sessão e direcionar para tela inical
+
+4 - colocamos validações para conteudo e formato nos imputs. os inputs bloqueiam caracteres inválidos e ditam
+como alguns campos deve ser preenchido, o campo data esta no formato DD/MM/AAAA e é convertido no insert para
+AAAA-MM-DD, campo nome n aceita numeros, cpf n aceita letras, telefones acrescentam o (+ XX) ao numero
+
+5 - As Senhas são criptografadas
+
+6 - a geração do numero aleatório para a pergunta aleatória é através da função randon_int() que é uma forma
+criptografada de gerar numeros. por fim acrescentamos o numero sorteado no array que será retornado da função
+para que o mesmo seja atribuido na checagem da resposta "Pergunta_1" = "Resposta_1"
+
+7 - as paginas da area do usuario comum e master caso n seja identificado o usuario logado direciona para pagina de erro
+
+8 - Antes de cadastrar checamos se há registro do login, email ou cpf informado no BD
+
+9 - para checagem da resposta utilizamos a query:
+"SELECT EXISTS(SELECT 1 FROM perguntas WHERE id = :id AND $respostaComNumero = :res) AS resultado"
+
+10 - todas as variaveis desnecessárias são removidas da Session
+
+11 - O login do master não é atribuido a session para preservar os dados e master não tem acesso a edição de seus dados
+
+12 - Depois de logado e autenticado, o link da home page identifica que o usuario está logado e não direciona mais para
+tela de login
+
+13 - Na area do Cliente utilizamos a variavel atribuida a session para exibir os textos conforme o sexo do cliente
+
+14 - criamos um arquivo que gerencia a conexão com o banco de dados para que caso no futuro venhamos ter
+que alterar os dados do banco fique mais fácil a alteração
+
+15 - criamos uma forma da consulta retornar exatamente os campos que o ADM tem interesse de forma fácil e prática
+
+16 - o ADM pode realizar a exclusão lógica dos usuarios evitando assim o cadastro deles novamente no sistema e podendo ser reativado caso haja algum erro.

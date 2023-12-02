@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+.solucoes{
+    justify-items: center;
+    
+    flex-wrap: wrap;
+        
+}
+.h1solu{
+   margin-bottom: 50px;
+}
+.solucoes img{
+    width: 75px;
+    
+}
+
+.flex{
+    display: flex;
+    gap: 60px 20px;
+    flex-wrap: wrap;
+   justify-content: center;
+   text-align: center;
+   font-size: 1rem;
+  
+   
+}
+
+.solucoes a {
+    background-color: #C91C2B;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+.solucoes p{
+    font-size: 1.25rem;
+    padding: 1rem;
+    text-align: center;
+    max-width: 42ch;
+}
