@@ -222,7 +222,7 @@
                 </div>";
             } else {
                 // Sendo master a tela muda
-                // trabalhamos o numero aleatório que chega pela função pra loginMaster
+                // trabalhamos o numero aleatório que chega pela função pra o loginMaster
               
                 echo "
                         <div class= 'areaCliente'>
