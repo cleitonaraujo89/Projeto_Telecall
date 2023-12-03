@@ -13,14 +13,13 @@ const senha = document.getElementById('senha')
 const confirmarSenha = document.getElementById('confirmarSenha')
 let sucesso = 0
 //Evitar o comportamento padrão da pagina por meio do evento submit da tag de id form 
-if(sucesso === 12){
-    form.submit();
-}
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
     check()
     if(sucesso === 12){
         form.submit();
+    } else {
+        sucesso = 0;
     }
 })
 
@@ -184,15 +183,7 @@ function check(){
         sucesso += 1
 
     }
-    
-    //Enviar caso todos os campos tenham 1 sucesso
-   /*  if(sucesso == 11){
-        console.log(nomeValue)
-        console.log(cpfValue)
-        console.log(emailValue)
-        console.log(telefoneValue)
-        console.log(senhaValue)
-    } */
+
 }
 
 //Funções de validação
