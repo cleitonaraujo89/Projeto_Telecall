@@ -118,3 +118,16 @@ img{
     margin-right: 15px;  
 
 }
+
+/* CONFIGURAÇÕES TELA DE IMPRESSÃO */
+.imgAlerta{
+    height: auto;
+    width: 200px;
+}
+.alerta{
+    text-align: center;
+    
+}
+.table_impressao{
+    width: 300px;
+}

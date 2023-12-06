@@ -137,6 +137,7 @@ class Usuario{
         $id = "id";
         $nome = "";
         $cpf = "";
+        $email = "";
         $data = "";
         $sexo = "";
         $telefone = "";
@@ -167,7 +168,14 @@ class Usuario{
                 $consulta[$campo] = addslashes($arrayItens[$campo]);
                 
                 $contador += 1;
+                if (count($arrayItens) - 4 == 1 ) {
+                    
+                    $id="id,";
+                    $$campo = $consulta[$campo];
+                    // ATENÇÃO COM ESSA LINHA ACIMA
+                }
                 if ($contador < count($arrayItens) - 4 ) {
+                    
                     $id="id,";
                     $$campo = $consulta[$campo].",";
                     // ATENÇÃO COM ESSA LINHA ACIMA
@@ -194,7 +202,7 @@ class Usuario{
         }       
         
         if($email_digitado != ""){
-            $emailConsulta = "email = \"$email_digitado\" ";
+            $emailConsulta = "email LIKE \"%$email_digitado%\" ";
             $and3 = " AND ";        
         }
         
@@ -202,10 +210,11 @@ class Usuario{
             $idConsulta = "id = $id_digitado ";
             $and4 = " AND ";   
         }
-        if($id === 'id'){ // verificação para caso haja o select * from...
+         if($id == 'id'){ // verificação para caso haja o select * from...
             $id = "id, ";
             $nome = "nome, ";
             $cpf = "cpf, ";
+            $email = "email, ";
             $data = "data, ";
             $sexo = "sexo, ";
             $telefone = "telefone, ";
@@ -213,8 +222,8 @@ class Usuario{
             $endereco = "endereco, ";
             $complemento = "complemento, ";
             $nomeMae = "nomeMae ";
-        }
-        $cmd = $this->pdo->prepare("SELECT $id $nome $cpf $data $sexo $telefone $telefoneFixo $endereco $complemento $nomeMae FROM cad_usuarios WHERE $nomeConsulta $and1 $cpfConsulta $and2 $emailConsulta $and3 $idConsulta $and4 admin = 0 AND ativo = 1");
+        } 
+        $cmd = $this->pdo->prepare("SELECT $id $nome $cpf $email $data $sexo $telefone $telefoneFixo $endereco $complemento $nomeMae FROM cad_usuarios WHERE $nomeConsulta $and1 $cpfConsulta $and2 $emailConsulta $and3 $idConsulta $and4 admin = 0 AND ativo = 1");
       /*   $cmd->bindValue(":nc", $nomeConsulta);
         $cmd->bindValue(":cc", $cpfConsulta);
         $cmd->bindValue(":ec", $emailConsulta);
@@ -224,14 +233,14 @@ class Usuario{
         
         return $res;
 
-        /* $testando = "SELECT $id $nome $cpf $data $sexo $telefone $telefoneFixo $endereco $complemento $nomeMae FROM cad_usuarios WHERE $nomeConsulta $and1 $cpfConsulta $and2 $emailConsulta $and3 $idConsulta $and4 admin = 0 AND ativo = 1";
+        /* $testando = "SELECT $id $nome $cpf $email $data $sexo $telefone $telefoneFixo $endereco $complemento $nomeMae FROM cad_usuarios WHERE $nomeConsulta $and1 $cpfConsulta $and2 $emailConsulta $and3 $idConsulta $and4 admin = 0 AND ativo = 1";
        
-        return $testando; */
+        return $testando; */ 
     }
     
       //EXCLUSÃO LOGICA
       public function excluirCadastro($id){
-        $cmd = $this->pdo->prepare("UPDATE cad_usuarios SET ativo = 0 WHERE id = :id");
+        $cmd = $this->pdo->prepare("UPDATE cad_usuarios SET ativo = 0 WHERE id = :id AND admin = 0"); //protegendo admins
         $cmd->bindValue(":id", $id);
         $cmd->execute();
     }
