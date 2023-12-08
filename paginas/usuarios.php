@@ -223,7 +223,7 @@ class Usuario{
             $complemento = "complemento, ";
             $nomeMae = "nomeMae ";
         } 
-        $cmd = $this->pdo->prepare("SELECT $id $nome $cpf $email $data $sexo $telefone $telefoneFixo $endereco $complemento $nomeMae FROM cad_usuarios WHERE $nomeConsulta $and1 $cpfConsulta $and2 $emailConsulta $and3 $idConsulta $and4 admin = 0 AND ativo = 1");
+        $cmd = $this->pdo->prepare("SELECT $id $nome $cpf $email $data $sexo $telefone $telefoneFixo $endereco $complemento $nomeMae FROM cad_usuarios WHERE $nomeConsulta $and1 $cpfConsulta $and2 $emailConsulta $and3 $idConsulta $and4 admin = 0 AND ativo = 1 ORDER BY nome");
       /*   $cmd->bindValue(":nc", $nomeConsulta);
         $cmd->bindValue(":cc", $cpfConsulta);
         $cmd->bindValue(":ec", $emailConsulta);

@@ -6,11 +6,11 @@
     //session_destroy();
 
     //Verifique se o usuário está autenticado
-   /*   if (!isset($_SESSION['master_autenticado'])) {
+     if (!isset($_SESSION['master_autenticado'])) {
         // Redirecione para a página de login se não estiver autenticado
         header('Location: paginaErro.php');
         exit();
-    }  */
+    } 
   /*    var_dump($_POST);
     echo'<br>'; 
     echo'<br> -------------------';

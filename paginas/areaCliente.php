@@ -180,7 +180,7 @@ var_dump($_POST); */
     <!-- segunda barra de navegação -->
     <nav class="navbar navbar-expand-lg navbar-dark  segundanav" aria-label="segunda">
         <div class="container-fluid  ">
-            <a class="navbar-brand" href="#"><img class= "img" src="../imagens/logo-hdr.png" alt=""></a>
+            <a class="navbar-brand" href="../index.php"><img class= "img" src="../imagens/logo-hdr.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04"
                 aria-controls="navbarsExample04" aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>
