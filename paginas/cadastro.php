@@ -16,14 +16,21 @@
         $email = addslashes($_POST['email']);
         $telefone = addslashes($_POST['telefone']);
         $telefoneFixo = addslashes($_POST['telefone2']);
-        $endereco = addslashes($_POST['endereco']);
+        $cep = addslashes($_POST['cep']);
+        $estado = addslashes($_POST['estado']);
+        $rua = addslashes($_POST['rua']);
+        $numero = addslashes($_POST['numero']);
         $complemento = addslashes($_POST['complemento']);
+        $bairro = addslashes($_POST['bairro']);
+        $cidade = addslashes($_POST['cidade']);
         $login = addslashes($_POST['log']);
         $senha = addslashes($_POST['senha']);
         try {
-            $cadastrando = $u->cadastrarUsuario($nome, $data, $cpf, $nomeMae, $sexo, $email, $telefone, $telefoneFixo, $endereco, $complemento, $login, $senha);
+            $cadastrando = $u->cadastrarUsuario($nome, $data, $cpf, $nomeMae, $sexo, $email, $telefone, $telefoneFixo, $cep, $estado, $rua, $numero, $complemento, $bairro, $cidade, $login, $senha);
         } catch (Exception $e){
-            header('Location: paginaErro.php');
+            //header('Location: paginaErro.php');
+            var_dump($e);
+            echo 'deu ruim';
         }
         if(!$cadastrando){
             $msg = true;
@@ -187,29 +194,81 @@
                     <div class="telefone2">
                     <label for="telefone2">Telefone Fixo</label><br/>
                     <div class="input-group input-group-sm ">
-                        <input type="text" name="telefone2" id="telefone2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="11" placeholder="(+55)XX-XXXXXXXXX">
+                        <input type="text" name="telefone2" id="telefone2" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  placeholder="(+55)XX-XXXXXXXXX">
                         <i><img class="imgSucesso" src="../imagens/success-icon.svg" alt="sucesso"></i>
                         <i><img class="imgErro" src="../imagens/error-icon.svg" alt=""></i>
                         <small>Error mensage</small>
                     </div>
                 </div>
-                <div class="endereco">
-                    <label for="endereco">Endereço</label><br/>
+                <div class="formGrid">
+                    <div class="cep">
+                        <label for="cep">CEP</label><br/>
+                        <div class="input-group input-group-sm">
+                            <input  type="text" name="cep" id="cep" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="xxxxx-xxx" maxlength="9">
+                            <i><img class="imgSucesso" src="../imagens/success-icon.svg" alt="sucesso"></i>
+                            <i><img class="imgErro" src="../imagens/error-icon.svg" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
+                    </div>
+                    <div class="estado">
+                        <label for="estado">Estado</label><br/>
+                        <div class="input-group input-group-sm">
+                            <input type="text" name="estado" id="estado" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" minlength="2" maxlength="2" placeholder="XX">
+                            <i><img class="imgSucesso" src="../imagens/success-icon.svg" alt="sucesso"></i>
+                            <i><img class="imgErro" src="../imagens/error-icon.svg" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="rua">
+                    <label for="rua">Rua</label><br/>
                     <div class="input-group input-group-sm">
-                        <input onkeyup="maisculo(this)" type="text" name="endereco" id="endereco" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Rua exemplo nº 43">
+                        <input onkeyup="maisculo(this)" type="text" name="rua" id="rua" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Digite o logradouro">
                         <i><img class="imgSucesso" src="../imagens/success-icon.svg" alt="sucesso"></i>
                         <i><img class="imgErro" src="../imagens/error-icon.svg" alt=""></i>
                         <small>Error mensage</small>
                     </div> 
                 </div>
-                <div class="complemento">
-                    <label for="complemento">Complemento</label><br/>
-                    <div class="input-group input-group-sm">
-                        <input onkeyup="maisculo(this)" type="text" name="complemento" id="complemento" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="casa, apartamento, lote ou ponto de referência">
-                        <i><img class="imgSucesso" src="../imagens/success-icon.svg" alt="sucesso"></i>
-                        <i><img class="imgErro" src="../imagens/error-icon.svg" alt=""></i>
-                        <small>Error mensage</small>
-                    </div> 
+                <div class="formGrid">
+                    <div class="numero">
+                        <label for="numero">Número</label><br/>
+                        <div class="input-group input-group-sm">
+                            <input  type="text" name="numero" id="numero" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="1234" maxlength="10">
+                            <i><img class="imgSucesso" src="../imagens/success-icon.svg" alt="sucesso"></i>
+                            <i><img class="imgErro" src="../imagens/error-icon.svg" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
+                    </div>
+                    <div class="complemento">
+                        <label for="complemento">Complemento</label><br/>
+                        <div class="input-group input-group-sm">
+                            <input type="text" name="complemento" id="complemento" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  maxlength="100">
+                            <i><img class="imgSucesso" src="../imagens/success-icon.svg" alt="sucesso"></i>
+                            <i><img class="imgErro" src="../imagens/error-icon.svg" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="formGrid">
+                    <div class="bairro">
+                        <label for="bairro">Bairro</label><br/>
+                        <div class="input-group input-group-sm">
+                            <input  type="text" name="bairro" id="bairro" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Digite seu Bairro">
+                            <i><img class="imgSucesso" src="../imagens/success-icon.svg" alt="sucesso"></i>
+                            <i><img class="imgErro" src="../imagens/error-icon.svg" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
+                    </div>
+                    <div class="cidade">
+                        <label for="cidade">Cidade</label><br/>
+                        <div class="input-group input-group-sm">
+                            <input type="text" name="cidade" id="cidade" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Digite sua Cidade">
+                            <i><img class="imgSucesso" src="../imagens/success-icon.svg" alt="sucesso"></i>
+                            <i><img class="imgErro" src="../imagens/error-icon.svg" alt=""></i>
+                            <small>Error mensage</small>
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="log">
                     <label for="log">Login</label><br/>
